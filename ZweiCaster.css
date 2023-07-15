@@ -1,93 +1,105 @@
 @font-face{
+    font-family: 'Oswald';
+    font-style: normal;
+    color: white;
+    src: url('./Oswald-VariableFont_wght.ttf');
+  }
+  
+  @font-face{
+    font-family: 'Fira';
+    font-style: normal;
+    color: white;
+    src: url('./FiraSans-Regular.ttf');
+  }
+
+  @keyframes fadeInLeft{
+    0% {opacity:0}
+    70% {opacity:0; transform: translateX(-20px)}
+    100% {opacity:1; transform: translateX(0)}
+  }
+  
+  *{
+    box-sizing: border-box;
+    /* outline: solid coral; */
+  }
+  
+  body{
   font-family: 'Oswald';
-  font-style: normal;
-  color: white;
-  src: url('./Oswald-VariableFont_wght.ttf');
-}
+  background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; 
+  }
 
-@font-face{
-  font-family: 'Fira';
-  font-style: normal;
-  color: white;
-  src: url('./FiraSans-Regular.ttf');
-}
-
-*{
-  box-sizing: border-box;
-  /* outline: solid coral; */
-}
-
-body{
-font-family: 'Oswald';
-background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; 
-}
-
-#VornameCasterLinks{
-  position:absolute;
-  font-size: 40px;
-  font-weight: 400;
-  color:white;
-  top: 847px;
-  left:150px;
-  width: 330px;
-  height:60px;
-  text-align: left;
-  vertical-align: top;
-  padding-left: 10px;
-  overflow:hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-#ZweiteZeileCasterLinks{
-  font-family: 'Fira';
-  position:absolute;
-  font-size: 25px;
-  font-weight: 400;
-  color:white;
-  top: 910px;
-  left:150px;
-  width: 330px;
-  height:40px;
-  text-align: left;
-  vertical-align: top;
-  padding-left: 10px;
-  overflow:hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-#VornameCasterRechts{
-  position:absolute;
-  font-size: 40px;
-  font-weight: 400;
-  color:white;
-  top: 847px;
-  right:150px;
-  width: 330px;
-  height:60px;
-  text-align: right;
-  vertical-align: top;
-  padding-right: 10px;
-  overflow:hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-#ZweiteZeileCasterRechts{
-  font-family: 'Fira';
-  position:absolute;
-  font-size: 25px;
-  font-weight: 400;
-  color:white;
-  top: 910px;
-  right:150px;
-  width: 330px;
-  height:40px;
-  text-align: right;
-  vertical-align: top;
-  padding-right: 10px;
-  overflow:hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+  .AnimLeft{
+    animation: fadeInLeft 1.5s ease-in-out;
+  }
+  
+  #VornameCasterLinks{
+    position:absolute;
+    font-size: 44px;
+    font-weight: 400;
+    color:#ffffff;
+    top: 769px;
+    left:369px;
+    width: 330px;
+    height:60px;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform:uppercase;
+  }
+  
+  #ZweiteZeileCasterLinks{
+    position:absolute;
+    font-size: 28px;
+    font-weight: 400;
+    color:#009260;
+    top: 822px;
+    left:369px;
+    width: 330px;
+    height:40px;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform:uppercase;
+  }
+  
+  #VornameCasterRechts{
+    position:absolute;
+    font-size: 44px;
+    font-weight: 400;
+    color:white;
+    top: 769px;
+    right:450px;
+    width: 330px;
+    height:60px;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform:uppercase;
+  }
+  
+  #ZweiteZeileCasterRechts{
+    position:absolute;
+    font-size: 28px;
+    font-weight: 400;
+    color: #009260;
+    top: 822px;
+    right:450px;
+    width: 330px;
+    height:40px;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform:uppercase;
+  }

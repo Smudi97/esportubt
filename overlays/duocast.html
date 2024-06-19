@@ -1,15 +1,55 @@
-@font-face{
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="position: relative;"></div>
+        <video width="1920" height="1080" loop autoplay style="position: absolute;">
+            <source src="../assets/bg_duocast.webm" type="video/webm; codecs=vp8,opus">
+        </video>
+        <img src="../assets/border_duocast.png" style="position: absolute; width: 1920px; height: 1080px;">
+        <img src="../assets/nametags_duocast.png" style="position: absolute; width: 1920px; height: 1080px;">
+    </div>
+  <span id="VornameCasterLinks" ></span>
+  <span id="ZweiteZeileCasterLinks" ></span>
+  <span id="VornameCasterRechts" ></span>
+  <span id="ZweiteZeileCasterRechts" ></span>
+
+    <!-- JAVASCRIPT STUFF -->
+    <script src="../Updater.js"></script>
+    <script src="../regex-operation.js"></script>
+    <script>
+        const settings = {
+            'string': {
+              'B1' :'VornameCasterLinks',
+              'B2' :'ZweiteZeileCasterLinks',
+              'B3' :'VornameCasterRechts',
+              'B4' :'ZweiteZeileCasterRechts',
+        }}
+
+        const spreadsheetID = '1C6cS1xjd-KqE4soKoPOLNBboYyQytDzRTpx0RulQehQ';
+        const worksheetName = 'Output';
+        const apiKey = "AIzaSyASPnMqrvhMv1l3tLdw38lftseaMGqH730";
+        const updateInterval = 2000;
+
+        const u = new GraphicsUpdater(settings, spreadsheetID, worksheetName, apiKey, updateInterval, false);
+        u.addOperation('regex', regexOperation);
+        u.startUpdating();
+    </script>
+</body>
+
+<style>
+    @font-face{
     font-family: 'Oswald';
     font-style: normal;
     color: white;
-    src: url('./Oswald-VariableFont_wght.ttf');
+    src: url('../assets/Oswald-VariableFont_wght.ttf');
   }
   
   @font-face{
     font-family: 'Fira';
     font-style: normal;
     color: white;
-    src: url('./FiraSans-Regular.ttf');
+    src: url('../assets/FiraSans-Regular.ttf');
   }
 
   @keyframes fadeInLeft{
@@ -24,8 +64,8 @@
   }
   
   body{
-  font-family: 'Oswald';
-  background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; 
+    font-family: 'Oswald';
+    background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; 
   }
 
   .AnimLeft{
@@ -39,7 +79,7 @@
     font-weight: 400;
     color:#ffffff;
     top: 769px;
-    left:369px;
+    left:340px;
     width: 330px;
     height:60px;
     text-align: left;
@@ -57,7 +97,7 @@
     font-weight: 400;
     color:#009260;
     top: 822px;
-    left:369px;
+    left:340px;
     width: 330px;
     height:40px;
     text-align: left;
@@ -75,7 +115,7 @@
     font-weight: 400;
     color:white;
     top: 769px;
-    right:450px;
+    right:700px;
     width: 330px;
     height:60px;
     text-align: left;
@@ -93,7 +133,7 @@
     font-weight: 400;
     color: #009260;
     top: 822px;
-    right:450px;
+    right:700px;
     width: 330px;
     height:40px;
     text-align: left;
@@ -104,3 +144,4 @@
     text-overflow: ellipsis;
     text-transform:uppercase;
   }
+</style>

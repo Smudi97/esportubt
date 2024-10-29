@@ -1,147 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<body>
-    <div style="position: relative;"></div>
-        <video width="1920" height="1080" loop autoplay muted style="position: absolute;">
-            <source src="../assets/bg_duocast.webm" type="video/webm; codecs=vp8,opus">
-        </video>
-        <img src="../assets/border_duocast.png" style="position: absolute; width: 1920px; height: 1080px;">
-        <img src="../assets/nametags_duocast.png" style="position: absolute; width: 1920px; height: 1080px;" class="AnimLeft">
+  <body>
+    <div style="position: relative">
+      <video
+        width="1920"
+        height="1080"
+        loop
+        autoplay
+        muted
+        style="position: absolute"
+      >
+        <source
+          src="../assets/bg_duocast.webm"
+          type="video/webm; codecs=vp8,opus"
+        />
+      </video>
+      <img
+        src="../assets/border_duocast.png"
+        style="position: absolute; width: 1920px; height: 1080px"
+      />
+      <img
+        src="../assets/nametags_duocast.png"
+        style="position: absolute; width: 1920px; height: 1080px"
+        class="animLeft"
+      />
     </div>
-  <span id="VornameCasterLinks" class="AnimLeft"></span>
-  <span id="ZweiteZeileCasterLinks" class="AnimLeft" ></span>
-  <span id="VornameCasterRechts" class="AnimLeft" ></span>
-  <span id="ZweiteZeileCasterRechts" class="AnimLeft" ></span>
+    <div class="boxLeft animLeft">
+      <span id="VornameCasterLinks" class="top"></span>
+      <span id="ZweiteZeileCasterLinks" class="bot"></span>
+    </div>
+    <div class="boxRight animLeft">
+      <span id="VornameCasterRechts" class="top"></span>
+      <span id="ZweiteZeileCasterRechts" class="bot"></span>
+    </div>
 
     <!-- JAVASCRIPT STUFF -->
     <script src="../Updater.js"></script>
     <script src="../regex-operation.js"></script>
     <script>
-        const settings = {
-            'string': {
-              'B1' :'VornameCasterLinks',
-              'B2' :'ZweiteZeileCasterLinks',
-              'B3' :'VornameCasterRechts',
-              'B4' :'ZweiteZeileCasterRechts',
-        }}
+      const settings = {
+        string: {
+          B1: "VornameCasterLinks",
+          B2: "ZweiteZeileCasterLinks",
+          B3: "VornameCasterRechts",
+          B4: "ZweiteZeileCasterRechts",
+        },
+      };
 
-        const spreadsheetID = '1C6cS1xjd-KqE4soKoPOLNBboYyQytDzRTpx0RulQehQ';
-        const worksheetName = 'Output';
-        const apiKey = "AIzaSyASPnMqrvhMv1l3tLdw38lftseaMGqH730";
-        const updateInterval = 2000;
+      const spreadsheetID = "1C6cS1xjd-KqE4soKoPOLNBboYyQytDzRTpx0RulQehQ";
+      const worksheetName = "Output";
+      const apiKey = "AIzaSyASPnMqrvhMv1l3tLdw38lftseaMGqH730";
+      const updateInterval = 2000;
 
-        const u = new GraphicsUpdater(settings, spreadsheetID, worksheetName, apiKey, updateInterval, false);
-        u.addOperation('regex', regexOperation);
-        u.startUpdating();
+      const u = new GraphicsUpdater(
+        settings,
+        spreadsheetID,
+        worksheetName,
+        apiKey,
+        updateInterval,
+        false
+      );
+      u.addOperation("regex", regexOperation);
+      u.startUpdating();
     </script>
-</body>
+  </body>
 
-<style>
-    @font-face{
-    font-family: 'Oswald';
-    font-style: normal;
-    color: white;
-    src: url('../assets/Oswald-VariableFont_wght.ttf');
-  }
-  
-  @font-face{
-    font-family: 'Fira';
-    font-style: normal;
-    color: white;
-    src: url('../assets/FiraSans-Regular.ttf');
-  }
+  <style>
+    @font-face {
+      font-family: "Oswald";
+      font-style: normal;
+      color: white;
+      src: url("../assets/Oswald-VariableFont_wght.ttf");
+    }
 
-  @keyframes fadeInLeft{
-    0% {opacity:0}
-    70% {opacity:0; transform: translateX(-20px)}
-    100% {opacity:1; transform: translateX(0)}
-  }
-  
-  *{
-    box-sizing: border-box;
-    /* outline: solid coral; */
-  }
-  
-  body{
-    font-family: 'Oswald';
-    background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; 
-  }
+    @font-face {
+      font-family: "Fira";
+      font-style: normal;
+      color: white;
+      src: url("../assets/FiraSans-Regular.ttf");
+    }
 
-  .AnimLeft{
-    opacity:0;
-    animation: fadeInLeft 2s ease-in-out 5s forwards;
-  }
-  
-  #VornameCasterLinks{
-    position:absolute;
-    font-size: 44px;
-    font-weight: 400;
-    color:#ffffff;
-    top: 769px;
-    left:340px;
-    width: 330px;
-    height:60px;
-    text-align: left;
-    vertical-align: top;
-    padding-left: 10px;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-transform:uppercase;
-  }
-  
-  #ZweiteZeileCasterLinks{
-    position:absolute;
-    font-size: 28px;
-    font-weight: 400;
-    color:#009260;
-    top: 822px;
-    left:340px;
-    width: 330px;
-    height:40px;
-    text-align: left;
-    vertical-align: top;
-    padding-left: 10px;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-transform:uppercase;
-  }
-  
-  #VornameCasterRechts{
-    position:absolute;
-    font-size: 44px;
-    font-weight: 400;
-    color:white;
-    top: 769px;
-    right:700px;
-    width: 330px;
-    height:60px;
-    text-align: left;
-    vertical-align: top;
-    padding-right: 10px;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-transform:uppercase;
-  }
-  
-  #ZweiteZeileCasterRechts{
-    position:absolute;
-    font-size: 28px;
-    font-weight: 400;
-    color: #009260;
-    top: 822px;
-    right:700px;
-    width: 330px;
-    height:40px;
-    text-align: left;
-    vertical-align: top;
-    padding-right: 10px;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-transform:uppercase;
-  }
-</style>
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+      }
+      70% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      /* outline: solid coral; */
+    }
+
+    body {
+      font-family: "Oswald";
+      background-color: rgba(0, 0, 0, 0);
+      margin: 0px auto;
+      overflow: hidden;
+    }
+
+    .animLeft {
+      opacity: 0;
+      animation: fadeInLeft 2s ease-in-out 5s forwards;
+    }
+
+    .boxLeft {
+      position: absolute;
+      top: 776px;
+      left: 350px;
+      width: 450px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .boxRight {
+      position: absolute;
+      top: 776px;
+      right: 350px;
+      width: 450px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .top {
+      color: white;
+      font-size: 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bot {
+      color: #009260;
+      font-size: 25px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</html>
